@@ -1,17 +1,24 @@
 package Logger;
 
 public class LoggerFactory {
-    ILogger log;
-    public ILogger createObject(String type)
+    static ILogger log;
+    public static ILogger createObject(String type)
     {
-        
-        if(type == "info")
-            log = new InfoLogger();
-        else if(type == "debug")
-            log = new DebugLogger();
-        else if(type == "error")
-            log = new ErrorLogger();
-
+        switch(type.toString())
+        {
+            case "INFO":
+                log = new InfoLogger();
+                break;
+            case "DEBUG":
+                log = new DebugLogger();
+                break;
+            case "ERROR":
+                log = new ErrorLogger();
+                break;
+            default:
+                log = new InfoLogger();
+                break;
+        }
         return log;
     }
 }

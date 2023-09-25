@@ -7,17 +7,17 @@ import Logger.LoggerFactory;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+        //System.out.println("Hello, World!");
 
         //ILogger - Debug, Info, Error
 
         //ILoggerFactory not a static class
-        LoggerFactory log = new LoggerFactory();
-        InfoLogger infoLog = (InfoLogger) log.createObject("info");
-        DebugLogger debugLog = (DebugLogger) log.createObject("info");
-        ErrorLogger errorLog = (ErrorLogger)log.createObject("info");
+        //LoggerFactory log = new LoggerFactory();
+        InfoLogger infoLog = (InfoLogger) LoggerFactory.createObject(LogLevel.INFO.toString());
+        DebugLogger debugLog = (DebugLogger) LoggerFactory.createObject(LogLevel.DEBUG.toString());
+        ErrorLogger errorLog = (ErrorLogger)LoggerFactory.createObject(LogLevel.ERROR.toString());
         
-        InfoLogger infoLog1 = (InfoLogger) log.createObject(LogLevel.INFO);
+        //InfoLogger infoLog1 = (InfoLogger) log.createObject(LogLevel.INFO);
 
         //You may make ILogger factory a static class
         
