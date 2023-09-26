@@ -1,4 +1,4 @@
-package Logger;
+package FactoryMethodDesignPattern.Logger;
 
 public class DebugLogger implements ILogger {
 

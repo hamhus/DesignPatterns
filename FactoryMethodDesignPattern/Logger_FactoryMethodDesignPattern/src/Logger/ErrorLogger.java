@@ -6,5 +6,6 @@ public class ErrorLogger implements ILogger {
     public void Log(String message) {
         System.out.println(message);
     }
+
     
 }

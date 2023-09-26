@@ -1,5 +1,5 @@
 package Logger;
 
-interface ILogger {
+public interface ILogger {
     public void log(String message);
 }
